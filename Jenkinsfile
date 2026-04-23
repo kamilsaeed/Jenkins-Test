@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building version ${NEW_VERSION}"
-                bat "nvm install" 
+                bat "echo 'Simulating build process...'" 
             }
         }
         stage('Test') {
