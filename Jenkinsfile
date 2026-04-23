@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven' // This must match the name configured in Jenkins Tools [cite: 79, 81, 84]
+        maven 'Maven' 
     }
     parameters {
         string(name: 'VERSION', defaultValue: '', description: 'version to deploy on prod')
@@ -20,7 +20,6 @@ pipeline {
         }
         stage('Test') {
             when {
-                // This stage will only run if executeTests is true [cite: 57, 58, 94]
                 expression { params.executeTests } 
             }
             steps {
